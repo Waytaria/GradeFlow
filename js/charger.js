@@ -1,6 +1,7 @@
 const studentResults = [];
 let data = {};
 let currentStudentIndex = null;
+const cookieName = 'GradeFlow';
 
 document.getElementById('load-bareme').addEventListener('click', () => {
     const fileInput = document.getElementById('upload-json');
@@ -96,7 +97,7 @@ function updateTotalPoints() {
     let total = 0;
 
     questionInputs.forEach((input) => {
-        total += parseInt(input.value) || 0;
+        total += parseFloat(input.value) || 0;
     });
 
     const totalInput = document.getElementById('total-points');
@@ -251,12 +252,6 @@ function initializeFromData(data) {
 }
 
 function downloadResults() {
-    const questions = Array.from(document.querySelectorAll('.question-item')).map(item => {
-        const text = item.querySelector('.question-text').textContent;
-        const points = item.querySelector('.question-points').value;
-        return { text, points: parseInt(points) || 0 };
-    });
-
     const outputData = {
         questions : data.questions,
         students: studentResults
@@ -393,6 +388,7 @@ function generateStudentTables() {
     link.click();
 }
 
+
 document.getElementById('save-button').addEventListener('click', downloadResults);
 document.getElementById('next-button').addEventListener('click', (event) => {
     event.preventDefault();
@@ -401,3 +397,15 @@ document.getElementById('next-button').addEventListener('click', (event) => {
 document.getElementById('generate-button').addEventListener('click', () => {
     generateStudentTables(data);
 });
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        saveStudentData();
+    }
+});
+document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey && event.key === 's') {
+        event.preventDefault();
+        downloadResults();
+    }
+});
+
