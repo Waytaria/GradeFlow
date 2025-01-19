@@ -1,0 +1,30 @@
+.action-button {
+    background-color: #6200ea;
+    color: white;
+    font-family: 'Ubuntu', Arial, sans-serif;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+}
+
+.action-button:hover {
+    background-color: #3700b3;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Centrer le toggle */
+.darkmode-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px auto;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charger un Barème</title>
+    <link rel="stylesheet" href="css/charger.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+    <header>
+        <h1>Charger un Barème</h1>
+    </header>
+    <div class="darkmode-toggle">
+        <label for="darkmode" class="switch">
+            <input type="checkbox" id="darkmode">
+            <span class="slider"></span>
+        </label>
+        <span>Mode sombre</span>
+    </div>
+    <main>
+        <div class="main-container">
+            <div class="form-section">
+                <div class="file-upload-section">
+                    <input type="file" id="upload-json" accept="application/json">
+                    <button id="load-bareme">Charger</button>
+                </div>
+                <hr>
+                <form id="bareme-form" class="hidden">
+                    <div id="scale-header">
+                        <div class="input-section">
+                            <label for="student-name">Nom de l'élève</label>
+                            <input type="text" id="student-name" placeholder="Entrez le nom de l'élève">
+                        </div>
+                        <div class="input-section">
+                            <label for="comments">Commentaire</label>
+                            <textarea id="comments" placeholder="Entrez un commentaire" rows="3" style="width: 100%;"></textarea>
+                        </div>
+                    </div>
+                    <div id="questions-container">
+                        <!-- Les questions du barème seront ajoutées ici dynamiquement -->
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" id="next-button">Suivant</button>
+                        <button type="button" id="save-button">Télécharger</button>
+                        <button type="button" id="generate-button">Générer</button>
+                    </div>
+                </form>
+            </div>
+            <aside class="students-section">
+                <h2>Élèves notés</h2>
+                <ul id="students-list">
+                    <!-- La liste des élèves notés apparaîtra ici -->
+                </ul>
+            </aside>
+        </div>
+    </main>
+    <footer>
+        <p>© 2025 Application de gestion de barèmes</p>
+    </footer>
+    <script src="js/charger.js"></script>
+    <script src="js/darkmode.js"></script>
+</body>
+</html>

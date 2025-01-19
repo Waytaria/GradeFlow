@@ -1,0 +1,224 @@
+/* General Styles for Table */
+.questions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: var(--color-white);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+}
+
+.questions-table th, .questions-table td {
+    padding: 1rem;
+    border-top: 1px solid var(--color-primary);
+}
+
+.questions-table th {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: bold;
+    text-align: center;
+}
+
+.question-points, .question-max {
+    text-align: center;
+}
+
+.question-max input {
+    width: calc(100% - 2rem - 2px);
+}
+
+.questions-table td {
+    background-color: var(--color-item-bg);
+    color: var(--color-text);
+}
+
+.questions-table tr:not(:last-child):hover td {
+    background-color: var(--color-hover-bg);
+    transition: background-color 0.3s ease;
+}
+
+#total-points {
+    text-align: right;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: var(--color-text);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    gap: 2%;
+}
+
+.form-section {
+    width: 65%;
+    background-color: var(--color-white);
+    padding: 2%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.students-section {
+    width: 30%;
+    background-color: var(--color-white);
+    padding: 2%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#students-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#students-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    background-color: var(--color-item-bg);
+    transition: background-color 0.3s ease;
+}
+
+#students-list li .student-name {
+    width: 50%;
+    max-width: 50%;
+    text-align: left;
+    padding: 0.5rem;
+}
+
+#students-list li * {
+    padding: 1%;
+    margin: 1%;
+}
+
+#students-list li .student-points {
+    width: 20%;
+    max-width: 20%;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+#students-list li button {
+    width: 20%;
+    max-width: 20%;
+    font-size: 1rem;
+}
+
+#students-list li button:hover {
+    background-color: var(--color-primary-hover);
+}
+
+#students-list li:hover {
+    background-color: var(--color-hover-bg);
+}
+
+.file-upload-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    margin-bottom: 2%;
+}
+
+#upload-json {
+    width: 70%;
+}
+
+.file-upload-section input[type="file"] {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 2px solid var(--color-primary);
+    border-radius: 5px;
+    font-family: var(--font-family);
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.file-upload-section input[type="file"]:hover {
+    border-color: var(--color-primary-hover);
+}
+
+.file-upload-section button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.file-upload-section button:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.question-text {
+    font-size: 1rem;
+}
+
+.input-section {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.input-section label {
+    font-size: var(--font-size-large);
+    color: var(--color-text);
+    width: 30%; /* Ajustez la largeur selon vos besoins */
+    text-align: right;
+}
+
+.input-section input, .input-section textarea {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: var(--font-size-base);
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: var(--color-text);
+    background-color: var(--color-item-bg);
+}
+
+#scale-header {
+    margin: 2rem 0;
+}
+
+hr {
+    border-color: var(--color-primary);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.form-actions #next-button {
+    margin-right: auto;
+}
+
+.form-actions #save-button,
+.form-actions #generate-button {
+    margin-left: 0.5rem;
+}
