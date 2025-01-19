@@ -1,4 +1,4 @@
-# Projet : EvalSys
+# Projet : GradeFlow
 
 ## Description
 EvalSys est une application web intuitive conçue pour la gestion des barèmes de notation. Elle permet aux enseignants et aux formateurs de créer, gérer et évaluer les barèmes de manière efficace. Grâce à son interface interactive, EvalSys simplifie le processus d'évaluation, tout en offrant une personnalisation complète et des fonctionnalités avancées.
