@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Barèmes</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/createScale.css">
+</head>
+<body>
+    <header>
+        <h1>Créer un Barème de Notation</h1>
+        <p>Ajoutez vos questions et définissez un barème de points pour chaque question.</p>
+    </header>
+    <main>
+        <div class="input-section">
+            <label for="bareme-name">Nom du barème</label>
+            <input type="text" id="bareme-name" placeholder="Exemple : Barème Mathématiques" aria-label="Nom du barème" />
+        </div>
+        <div class="darkmode-toggle">
+            <label for="darkmode" class="switch">
+                <input type="checkbox" id="darkmode" aria-label="Activer le mode sombre">
+                <span class="slider"></span>
+            </label>
+            <span>Mode sombre</span>
+        </div>
+        <div class="input-section">
+            <label for="question">Nouvelle question</label>
+            <input type="text" id="question" placeholder="Entrez la question" aria-label="Question" />
+            <label for="points">Points</label>
+            <input type="number" id="points" placeholder="Points" aria-label="Points" min="1" max="100" />
+            <button id="add-question">Ajouter</button>
+        </div>
+        <div class="questions-list">
+            <h2>Questions créées</h2>
+            <ul id="questions-container" aria-live="polite"></ul>
+        </div>
+        <div id="save-section">
+            <button id="save-questions" aria-label="Sauvegarder le barème en JSON">Sauvegarder en JSON</button>
+            <button id="load-scale" aria-label="Charger un barème JSON">Charger un Barème</button>
+        </div>
+    </main>
+    <footer>
+        <p>© 2025 Application de gestion de barèmes</p>
+    </footer>
+    <script src="js/QuestionHandler.js"></script>
+    <script src="js/CreateScaleHandler.js"></script>
+    <script src="js/darkmode.js"></script>
+</body>
+</html>
