@@ -40,6 +40,7 @@ main {
     width: 100%;
     display: flex;
     justify-content: space-around;
+    margin: 2em 0;
 }
 
 .input-section button {
@@ -68,49 +69,67 @@ main {
 
 .questions-list li {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 1%;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
     border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-bg, #fff);
+    height: 50px; /* Fixe la hauteur de chaque élément */
+}
+
+.questions-list li:last-child {
+    margin-bottom: 0; /* Pas de marge pour le dernier élément */
 }
 
 .questions-list li > * {
-    padding: 15px 2%;
-}
-
-#questions-container li {
-    display: flex;
-    justify-content: space-around;
+    padding: 0 10px;
+    text-align: center;
 }
 
 .question-text {
-    width: 70%;
+    width: 60%; /* Largeur pour aligner le texte des questions */
     display: flex;
     align-items: center;
+    justify-content: flex-start;
 }
 
 .question-points {
-    width: 7%;
+    width: 10%;
+    text-align: center;
+}
+
+.questions-list li .move-up,
+.questions-list li .move-down {
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0 5px;
     text-align: center;
 }
 
 .questions-list li button {
-    width: 13%;
+    padding: 10px;
+    width: 15%;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
-.question-text, .question-points {
-    border: 1px solid;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-}
-
 .questions-list li:hover {
-    background-color: var(--color-hover-bg);
+    background-color: var(--color-hover-bg, #f3f3f3);
 }
 
 .questions-list li button:hover {
-    background-color: var(--color-primary-hover);
+    background-color: var(--color-primary-hover, #6200ea);
+    color: #fff;
+}
+
+body #questions-container li {
+    background-color: var(--color-hover-bg);
+    color: var(--color-text);
+}
+
+body #questions-container li:hover {
+    background-color: var(--color-item-bg);
 }
