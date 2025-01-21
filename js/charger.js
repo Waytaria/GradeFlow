@@ -1,7 +1,6 @@
 const studentResults = [];
 let data = {};
 let currentStudentIndex = null;
-const cookieName = 'GradeFlow';
 
 document.getElementById('load-bareme').addEventListener('click', () => {
     const fileInput = document.getElementById('upload-json');
