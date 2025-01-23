@@ -162,8 +162,11 @@ class LoadScaleHandler {
         const container = document.getElementById(containerId);
         container.innerHTML = '';
 
-        const totalStudentsDiv = document.createElement('div');
-        totalStudentsDiv.textContent = `Nombre d'élèves corrigés : ${this.students.length}`;
+        const totalStudentsDiv = document.createElement('input');
+        totalStudentsDiv.classList.add('student-list-header');
+        totalStudentsDiv.type = 'text';
+        totalStudentsDiv.value = `${this.students.length} élèves corrigés`;
+        totalStudentsDiv.disabled = true;
         container.appendChild(totalStudentsDiv);
 
         this.students.forEach(student => {
