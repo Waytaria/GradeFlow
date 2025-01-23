@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const darkModeToggle = document.getElementById('darkmode');
+    const logo = document.querySelector('.center-logo');
 
     darkModeToggle.addEventListener('change', () => {
         if (darkModeToggle.checked) {
@@ -7,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             disableDarkMode();
         }
+        updateLogo();
     });
 
     function enableDarkMode() {
@@ -37,6 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.style.setProperty('--color-disabled-text-light', '#666');
     }
 
+    function updateLogo() {
+        if (logo) {
+            if (darkModeToggle.checked) {
+                logo.src = 'logoDark.png';
+            } else {
+                logo.src = 'logo.png';
+            }
+        }
+    }
+
     // Initialize dark mode based on system preference or previous user choice
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (localStorage.getItem('darkmode') === 'enabled' || (!localStorage.getItem('darkmode') && prefersDarkScheme)) {
@@ -46,6 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
         darkModeToggle.checked = false;
         disableDarkMode();
     }
+
+    updateLogo();
 
     // Save preference
     darkModeToggle.addEventListener('change', () => {

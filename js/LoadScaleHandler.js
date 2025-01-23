@@ -90,7 +90,7 @@ class LoadScaleHandler {
                 const questionInput = document.createElement('input');
                 questionInput.type = 'number';
                 questionInput.name = question.id;
-                questionInput.placeholder = 'Points obtenus';
+                questionInput.placeholder = '0';
                 questionInput.min = 0;
                 questionInput.max = question.points;
                 inputCell.appendChild(questionInput);

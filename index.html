@@ -6,10 +6,11 @@
     <title>Barèmes de Notation</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" type="image/x-icon" href="logo.png">
 </head>
 <body>
     <header>
-        <h1>Gestion des Barèmes de Notation</h1>
+        <h1>Gestionnaire de Barèmes</h1>
     </header>
     <main>
         <div class="darkmode-toggle">
@@ -19,13 +20,48 @@
             </label>
             <span>Mode sombre</span>
         </div>
-        <div class="container">
+        <section class="how-it-works">
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo" class="center-logo">
+            </div>
+            <div class="content">
+                <h2>Comment utiliser GradeFlow ?</h2>
+                <p>GradeFlow est conçu pour vous simplifier la gestion des barèmes et l'évaluation des élèves. Voici comment procéder :</p>
+                <div class="steps">
+                    <div class="step">
+                        <h3>1. Créez un nouveau barème</h3>
+                        <p>
+                            Cliquez sur <strong>"Créer un nouveau barème"</strong>. Vous pourrez y ajouter des questions, définir un nombre de points pour chacune et personnaliser votre barème.
+                        </p>
+                    </div>
+                    <div class="step">
+                        <h3>2. Chargez un barème existant</h3>
+                        <p>
+                            Si vous avez déjà un barème sauvegardé au format JSON, utilisez l'option <strong>"Charger un barème"</strong>. Cela vous permettra de le réutiliser et de gagner du temps.
+                        </p>
+                    </div>
+                    <div class="step">
+                        <h3>3. Évaluez vos élèves</h3>
+                        <p>
+                            Une fois le barème chargé, commencez à évaluer vos élèves. Saisissez les points obtenus pour chaque question et ajoutez, si nécessaire, des commentaires personnalisés.
+                        </p>
+                    </div>
+                    <div class="step">
+                        <h3>4. Téléchargez les résultats</h3>
+                        <p>
+                            Une fois l'évaluation terminée, vous pouvez télécharger un fichier JSON contenant les résultats ou générer une page HTML récapitulant les performances de chaque élève.
+                        </p>
+                    </div>
+                </div>
+            </div>            
+        </section>
+        <div class="buttons">
             <a href="CreateScale.html"><button id="create-scale" class="action-button">Créer un nouveau barème</button></a>
             <a href="LoadScale.html"><button id="load-scale" class="action-button">Charger un barème existant</button></a>
         </div>
-    </main>
+    </main>    
     <footer>
-        <p>© 2025 Application de gestion de barèmes</p>
+        <p>© 2025 GradeFlow</p>
     </footer>
     <script src="js/darkmode.js"></script>
 </body>

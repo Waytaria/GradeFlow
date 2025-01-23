@@ -29,13 +29,17 @@
 }
 
 .questions-table td {
-    background-color: var(--color-item-bg);
+    background-color: var(--color-white);
     color: var(--color-text);
 }
 
 .questions-table tr:not(:last-child):hover td {
     background-color: var(--color-hover-bg);
     transition: background-color 0.3s ease;
+}
+
+tr td:not(:first-child) {
+    text-align: center;
 }
 
 #total-points {
@@ -143,20 +147,9 @@ main {
 
 /* Buttons */
 .student-item > button {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border: none;
     padding: 0.3rem 0.8rem;
     font-size: 0.9rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    height: 2rem; /* Same height as input */
-}
-
-.student-item > button:hover {
-    background-color: var(--color-primary-hover);
-    transform: scale(1.05);
+    height: 2rem;
 }
 
 .totalStudentsDiv {
@@ -206,18 +199,8 @@ main {
 }
 
 .file-upload-section button {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border: none;
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.file-upload-section button:hover {
-    background-color: var(--color-primary-hover);
 }
 
 .question-text {
@@ -265,7 +248,7 @@ hr {
 }
 
 .form-actions #next-button {
-    margin-right: auto;
+    margin-left: auto;
 }
 
 .form-actions #save-button,

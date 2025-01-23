@@ -61,32 +61,38 @@ class CreateScaleHandler {
         const container = document.getElementById('questions-container');
         container.innerHTML = '';
         const questions = this.questionHandler.getAllQuestions();
-
+    
         questions.forEach((question) => {
             const li = document.createElement('li');
-
+    
             const questionText = document.createElement('div');
             questionText.classList.add('question-text');
             questionText.textContent = `${question.text}`;
-
+    
             const questionPoints = document.createElement('div');
             questionPoints.classList.add('question-points');
             questionPoints.textContent = `${question.points} points`;
-
+    
             const upArrow = document.createElement('span');
-            upArrow.innerHTML = '⬆️';
             upArrow.classList.add('move-up');
             upArrow.title = 'Monter';
             upArrow.style.cursor = 'pointer';
+            upArrow.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="var(--color-primary)">
+                    <path d="M7 14l5-5 5 5H7z"/>
+                </svg>`;
             upArrow.addEventListener('click', () => this.moveQuestionUp(question.id));
-
+    
             const downArrow = document.createElement('span');
-            downArrow.innerHTML = '⬇️';
             downArrow.classList.add('move-down');
             downArrow.title = 'Descendre';
             downArrow.style.cursor = 'pointer';
+            downArrow.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="var(--color-primary)">
+                    <path d="M7 10l5 5 5-5H7z"/>
+                </svg>`;
             downArrow.addEventListener('click', () => this.moveQuestionDown(question.id));
-
+    
             const deleteButton = document.createElement('button');
             deleteButton.textContent = 'Supprimer';
             deleteButton.addEventListener('click', () => {
@@ -94,7 +100,7 @@ class CreateScaleHandler {
                     this.deleteQuestion(question.id);
                 }
             });
-
+    
             li.appendChild(questionText);
             li.appendChild(questionPoints);
             li.appendChild(upArrow);
@@ -102,7 +108,7 @@ class CreateScaleHandler {
             li.appendChild(deleteButton);
             container.appendChild(li);
         });
-    }
+    }    
 
     saveToFile() {
         const formattedData = {
