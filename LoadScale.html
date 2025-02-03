@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charger un Barème</title>
-    <link rel="stylesheet" href="css/loadScale.css">
-    <link rel="stylesheet" href="css/common.css">
+    <title>GradeFlow - Charger</title>
+    <link rel="stylesheet" href="css/desktop/loadScale.css" id="page-css">
+    <link rel="stylesheet" href="css/desktop/common.css" id="common-css">
     <link rel="icon" type="image/x-icon" href="logo.png">
 </head>
 <body>
@@ -63,5 +63,17 @@
     <script src="js/StudentHandler.js"></script>
     <script src="js/LoadScaleHandler.js"></script>
     <script src="js/darkmode.js"></script>
+    <script>
+        function loadResponsiveCSS() {
+            const isMobile = window.innerWidth <= 767;
+            const cssPath = isMobile ? 'css/mobile/' : 'css/desktop/';
+            
+            document.getElementById('common-css').setAttribute('href', cssPath + 'common.css');
+            document.getElementById('page-css').setAttribute('href', cssPath + 'loadScale.css');
+        }
+      
+        loadResponsiveCSS();
+        window.addEventListener('resize', loadResponsiveCSS);
+    </script>
 </body>
 </html>

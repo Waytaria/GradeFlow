@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+:root {
+    --color-background: #f4f4f9;
+    --color-text: #333;
+    --color-primary: #6200ea;
+    --color-primary-hover: #3700b3;
+    --color-white: #fff;
+    --color-border: #ddd;
+    --color-hover-bg: #f1f1f1;
+    --color-item-bg: #f9f9f9;
+    --color-disabled-light: #f9f9f9;
+    --color-disabled-dark: #111;
+    --color-disabled-text-light: #666;
+    --color-disabled-text-dark: #bbb;
+    --font-family: 'Ubuntu', Arial, sans-serif;
+    --font-size-base: 0.75rem;
+    --font-size-large: 1.2rem;
+}
+
+* {
+    font-family: var(--font-family);
+}
+
+body {
+    font-size: var(--font-size-base);
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.hidden {
+    display: none;
+}
+
+header {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    text-align: center;
+    padding: 2%;
+    margin-bottom: 30px;
+}
+
+h1 {
+    margin: 0;
+    font-size: var(--font-size-large);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    text-align: center;
+    padding: 2%;
+    margin-top: auto;
+}
+
+input, textarea {
+    padding: 0.5rem;
+    border: 2px solid var(--color-border);
+    border-radius: 5px;
+    outline: none;
+    font-family: var(--font-family);
+    transition: border-color 0.3s ease;
+    background-color: var(--color-disabled-light);
+    color: var(--color-disabled-text-light);
+}
+
+input:focus, textarea:focus {
+    border-color: var(--color-primary-hover);
+    background-color: var(--color-disabled-light);
+    color: var(--color-disabled-text-light);
+}
+
+body.dark-mode input:focus, body.dark-mode textarea:focus {
+    background-color: var(--color-disabled-dark);
+    color: var(--color-disabled-text-dark);
+}
+
+body.dark-mode input, body.dark-mode textarea {
+    background-color: var(--color-disabled-dark);
+    color: var(--color-disabled-text-dark);
+}
+
+.darkmode-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-family);
+    font-size: 1.5rem;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 19px;
+    width: 19px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--color-primary);
+}
+
+input:checked + .slider:before {
+    transform: translateX(25px);
+}
+
+button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 0.5rem 1.1rem;
+    border-radius: 5px;
+    margin: 0 1em;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    font-size: 1rem;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+body.dark-mode .question-item input {
+    background-color: var(--color-disabled-dark);
+    color: var(--color-disabled-text-dark);
+}

@@ -1,0 +1,146 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 5%;
+    box-sizing: border-box;
+}
+
+.input-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 2% 0;
+}
+
+.input-section label {
+    width: 100%;
+    text-align: center;
+}
+
+.input-section input {
+    padding: 2%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input-section button {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#question,
+#points {
+    width: 100%;
+}
+
+#save-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 2em 0;
+}
+
+#save-questions,
+#load-scale {
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.questions-list {
+    width: 100%;
+    margin: 2% auto;
+    padding: 2%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.questions-list h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.questions-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.questions-list li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-bg, #fff);
+    box-sizing: border-box;
+}
+
+/* Le texte de la question prend toute la largeur */
+.questions-list li > *:first-child {
+    flex-basis: 100%;
+    text-align: left;
+}
+
+/* Les autres éléments s'affichent sur une même ligne en dessous */
+.questions-list li > *:not(:first-child) {
+    flex: none;
+}
+
+.questions-list li .move-up,
+.questions-list li .move-down {
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.questions-list li button {
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.questions-list li:hover {
+    background-color: var(--color-hover-bg, #f3f3f3);
+}
+
+body #questions-container li {
+    background-color: var(--color-hover-bg);
+    color: var(--color-text);
+}
+
+body #questions-container li:hover {
+    background-color: var(--color-item-bg);
+}
+
+.move-up svg,
+.move-down svg {
+    width: 2em;
+    height: 2em;
+    transition: transform 0.2s ease, width 0.2s ease, height 0.2s ease;
+}
+
+.move-up:hover svg,
+.move-down:hover svg {
+    transform: scale(1.5);
+    position: relative;
+    z-index: 10;
+}
